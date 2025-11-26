@@ -1,12 +1,19 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import api from "./services/api";
+import userService from "./services/userService";
 
 const RestAPI = () => {
-    console.log('API instance created:', api.defaults.baseURL)
+    useEffect(() => {
+        // test get all users
+        userService.getAllUsers()
+        .then(users  => console.log("All Users:", users))
+        .catch(e => console.error(e))
+    }, [])
+
     return (
         <>
-            <h1> testing API</h1>
+        <div> Check console for user data</div>
         </>
     );
 };
