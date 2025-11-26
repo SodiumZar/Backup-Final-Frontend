@@ -1,15 +1,20 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import api from "./services/api";
-import userService from "./services/userService";
+import reportService from './services/reportService';
 
 const RestAPI = () => {
     useEffect(() => {
-        // test get all users
-        userService.getAllUsers()
-        .then(users  => console.log("All Users:", users))
-        .catch(e => console.error(e))
-    }, [])
+    // Test get all reports
+    reportService.getAllReports()
+        .then(reports => console.log('All reports:', reports))
+        .catch(error => console.error(error));
+
+    // Test get by status
+    reportService.getReportsByStatus('pending')
+        .then(reports => console.log('Pending reports:', reports))
+        .catch(error => console.error(error));
+    }, []);
 
     return (
         <>
