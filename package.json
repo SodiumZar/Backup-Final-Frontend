@@ -9,7 +9,6 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "json-server --watch db/db.json"
-
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
