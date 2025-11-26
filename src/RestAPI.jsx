@@ -1,24 +1,18 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import api from "./services/api";
-import reportService from './services/reportService';
+import { Report_Categories, Report_Statuses, getCategoryLabel } from './constants/reportCategories'
+
 
 const RestAPI = () => {
-    useEffect(() => {
-    // Test get all reports
-    reportService.getAllReports()
-        .then(reports => console.log('All reports:', reports))
-        .catch(error => console.error(error));
-
-    // Test get by status
-    reportService.getReportsByStatus('pending')
-        .then(reports => console.log('Pending reports:', reports))
-        .catch(error => console.error(error));
-    }, []);
+    
+console.log('Categories:', Report_Categories);
+console.log('Statuses:', Report_Statuses);
+console.log('Label for environment:', getCategoryLabel('environment'));
 
     return (
         <>
-        <div> Check console for user data</div>
+        <h1> Check console for user data</h1>
         </>
     );
 };
